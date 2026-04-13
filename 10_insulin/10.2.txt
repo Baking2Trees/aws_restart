@@ -1,0 +1,19 @@
+voclabs:~/environment $ grep -o '[a-z]' preproinsulin-seq.txt | tr -d '\n' > preproinsulin-seq-clean.txt
+voclabs:~/environment $ wc -c preproinsulin-seq-clean.txt 
+110 preproinsulin-seq-clean.txt
+
+cut -c1-24 preproinsulin-seq-clean.txt | tr -d '\n' > lsinsulin-seq-clean.txt
+wc -c lsinsulin-seq-clean.txt
+// should be 24
+
+In the AWS Cloud9 IDE, on the navigation pane, choose File > New File and save the file as lsinsulin-seq-clean.txt.
+In lsinsulin-seq-clean.txt, save amino acids 1–24. Verify that your file has 24 characters.
+
+In the AWS Cloud9 IDE, on the navigation pane, choose File > New File and save the file as binsulin-seq-clean.txt.
+In binsulin-seq-clean.txt, save amino acids 25–54. Verify that your file has 30 characters.
+
+In the AWS Cloud9 IDE, on the navigation pane, choose File > New File and save the file as cinsulin-seq-clean.txt.
+In cinsulin-seq-clean.txt, save amino acids 55–89. Verify that your file has 35 characters.
+
+In the AWS Cloud9 IDE, on the navigation pane, choose File > New File and save the file as ainsulin-seq-clean.txt.
+In ainsulin-seq-clean.txt, save amino acids 90–110. Verify that your file has 21 characters.

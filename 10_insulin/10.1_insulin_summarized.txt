@@ -1,0 +1,31 @@
+voclabs:~/environment $ grep -o [a-zA-Z] preproinsulin-seq.txt | tr -d '\n' | wc -c 
+116
+voclabs:~/environment $ cat preproinsulin-seq.txt | sed 's/[^a-zA-Z]//g' | tr -d '\n' | wc -c
+116
+voclabs:~/environment $ 
+
+voclabs:~/environment $ cat preproinsulin-seq.txt | sed 's/[^a-zA-Z]//g' | tr -d '\n' > cleaned2.txt
+voclabs:~/environment $ cat cleaned2.txt 
+ORIGINmalwmrllpllallalwgpdpaaafvnqhlcgshlvealylvcgergffytpktrreaedlqvgqvelgggpgagslqplalegslqkrgiveqcctsicslyqlenycnvoclabs:~/environment $ wc -c cleaned2.txt 
+116 cleaned2.txt
+voclabs:~/environment $ 
+
+voclabs:~/environment $ cat preproinsulin-seq.txt | sed 's/[^a-zA-Z]//g' | tr -d '\n' | tee cleaned2.txt
+ORIGINmalwmrllpllallalwgpdpaaafvnqhlcgshlvealylvcgergffytpktrreaedlqvgqvelgggpgagslqplalegslqkrgiveqcctsicslyqlenycnvoclabs:~/environment $ wc -c cleaned2.txt 
+116 cleaned2.txt
+voclabs:~/environment $ 
+// tee = “take input, show it, and save it at the same time”
+
+voclabs:~/environment $ cat preproinsulin-seq.txt | sed 's/[0-9 ]//g' | tr -d '\n' | wc -c
+118
+voclabs:~/environment $ cat preproinsulin-seq.txt | sed 's/[0-9 ]//g' | tr -d '\n'
+ORIGINmalwmrllpllallalwgpdpaaafvnqhlcgshlvealylvcgergffytpktrreaedlqvgqvelgggpgagslqplalegslqkrgiveqcctsicslyqlenycn//voclabs:~/environment $ cat preproinsulin-seq.txt | sed 's/[0-9\/ ]//g' | tr -d '\n'                                                    
+ORIGINmalwmrllpllallalwgpdpaaafvnqhlcgshlvealylvcgergffytpktrreaedlqvgqvelgggpgagslqplalegslqkrgiveqcctsicslyqlenycnvoclabs:~/environment $ cat preproinsulin-seq.txt | sed 's/[0-9\/ ]//g' | tr -d '\n' | wc -c
+116
+voclabs:~/environment $ 
+
+cat preproinsulin-seq.txt | sed 's/ORIGIN//g; s/[0-9 ]//g' | tr -d '\n' | wc -c
+
+sed 's/ORIGIN//g; s/[^a-zA-Z]//g' preproinsulin-seq.txt | tr -d '\n' > cleaned.txt
+
+// we can use sed in a sed OR sed after a sed

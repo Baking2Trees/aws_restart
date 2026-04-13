@@ -1,0 +1,14 @@
+https://www.ncbi.nlm.nih.gov/protein/AAA59172.1
+
+// grep method
+
+voclabs:~/environment $ grep -o '[a-zA-Z]' preproinsulin-seq.txt | tr -d '\n' > cleaned.txt
+voclabs:~/environment $ wc -c cleaned.txt
+116 cleaned.txt
+voclabs:~/environment $ 
+
+// OR
+
+// remove the A-Z will automatically remove the words ORIGIN
+voclabs:~/environment $ grep -o [a-z] preproinsulin-seq.txt | tr -d '\n' | wc -c                                            
+110
